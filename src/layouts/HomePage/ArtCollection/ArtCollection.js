@@ -5,7 +5,17 @@ import artImg2 from "assets/images/art-img-2.png";
 import artImg3 from "assets/images/art-img-3.png";
 import artImg4 from "assets/images/art-img-4.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+
+import SwiperCore, { Pagination, Navigation } from "swiper";
+import useMediaQuery from "hooks/useMediaQuery";
+SwiperCore.use([Navigation, Pagination]);
+
 function ArtCollection() {
+  const isBellow = useMediaQuery("(max-width: 500px)");
+
   return (
     <div className="container-wrapper">
       <div className={styles.wrapper}>
@@ -20,11 +30,49 @@ function ArtCollection() {
           </div>
         </div>
 
-        <div className={`${styles.cards} mb-50px`}>
-          <img src={artImg1} className="w-full" alt="" />
-          <img src={artImg2} className="w-full" alt="" />
-          <img src={artImg3} className="w-full" alt="" />
-          <img src={artImg4} className="w-full" alt="" />
+        <div className={`mb-50px`}>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={4}
+            pagination={true}
+            className={isBellow ? "nftCollectionSwiper" : ""}
+            style={{ paddingBottom: isBellow ? "50px" : "" }}
+            breakpoints={{
+              1000: {
+                spaceBetween: 50,
+                slidesPerView: 4,
+              },
+              700: {
+                spaceBetween: 20,
+                slidesPerView: 4,
+              },
+              500: {
+                spaceBetween: 20,
+                slidesPerView: 3,
+              },
+              450: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+              },
+              200: {
+                spaceBetween: 20,
+                slidesPerView: 1,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <img src={artImg1} className="w-full" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={artImg2} className="w-full" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={artImg3} className="w-full" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={artImg4} className="w-full" alt="" />
+            </SwiperSlide>
+          </Swiper>
         </div>
 
         <footer>

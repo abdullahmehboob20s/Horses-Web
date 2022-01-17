@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
+  text-align: center;
 }
 
 .wrapper::before {
@@ -14,7 +16,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: red;
   background: url(../../../assets/images/horses-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
@@ -27,4 +28,25 @@
   max-width: 920px;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .wrapper::before {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    justify-content: start;
+    text-align: left;
+  }
+  .wrapper h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 400px) {
+  .wrapper h1 {
+    font-size: 28px;
+  }
 }

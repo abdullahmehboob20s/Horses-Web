@@ -2,14 +2,22 @@ import React from "react";
 import styles from "./Section.module.css";
 import welcomeImg from "assets/images/welcome-img.png";
 import Image from "components/ImageMirrorEffect/ImageMirrorEffect";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Section() {
+  const isBellowThousand = useMediaQuery("(max-width: 1000px)");
+  const isBellowSix100 = useMediaQuery("(max-width: 600px)");
+
   return (
     <div className="container-wrapper">
-      <div className={styles.section}>
-        <div className={styles.section_left}>
-          <Image img={welcomeImg} />
-        </div>
+      <div className={`${styles.section} horse_section`}>
+        {isBellowThousand ? (
+          ""
+        ) : (
+          <div className={styles.section_left}>
+            <Image img={welcomeImg} />
+          </div>
+        )}
         <div className={styles.section_right}>
           <h5 className="fs-40px white font-gilroy-light uppercase mb-15px">
             Welcome to the
@@ -20,6 +28,21 @@ function Section() {
             </span>{" "}
             Club (CSC)
           </h1>
+
+          {isBellowThousand ? (
+            <Image
+              img={welcomeImg}
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                margin: "0 auto",
+                marginTop: isBellowSix100 ? "30px" : "50px",
+                marginBottom: isBellowSix100 ? "30px" : "70px",
+              }}
+            />
+          ) : (
+            ""
+          )}
 
           <p className="fs-20px font-gilroy-light mb-30px lh-1_4 gray">
             The CRYPTOSTALLIONS CLUB is a private and scarce collection of 10

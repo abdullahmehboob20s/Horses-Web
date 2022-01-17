@@ -6,6 +6,7 @@ import timeIcon from "assets/images/time.png";
 import collectiveIcon from "assets/images/collective.png";
 import communityIcon from "assets/images/community.png";
 import holderIcon from "assets/images/holder.png";
+import useMediaQuery from "hooks/useMediaQuery";
 
 const Card = ({ img, title, desc }) => {
   return (
@@ -26,10 +27,12 @@ const Card = ({ img, title, desc }) => {
 };
 
 function Values() {
+  const isBellow600 = useMediaQuery("(max-width: 600px)");
+
   return (
     <div className="container-wrapper">
-      <header className="text-center mb-70px">
-        <h1 className="fs-40px font-gilroy-light weight-3 mb-5px lh-1">
+      <header className={`text-center ${isBellow600 ? "mb-40px" : "mb-70px"}`}>
+        <h1 className="fs-40px font-gilroy-light weight-3 mb-5px lh-1 white">
           SOME FACTS
         </h1>
         <h2 className="text-gradient fs-70px font-gilroy-black">OUR VALUES</h2>

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./CountdownTimer.module.css";
 import { FaPlus } from "react-icons/fa";
 import { TiMinus } from "react-icons/ti";
+import useMediaQuery from "hooks/useMediaQuery";
 
 const Counter = ({ count, title }) => {
   return (
@@ -20,6 +21,8 @@ const Counter = ({ count, title }) => {
 };
 
 function CountdownTimer() {
+  const isBellow = useMediaQuery("(max-width: 500px)");
+
   return (
     <div className="container-wrapper py-100px">
       <div className={styles.wrapper}>
@@ -35,9 +38,9 @@ function CountdownTimer() {
 
         <div className={`${styles.counterWrapper} mb-50px`}>
           <Counter count={9} title="Days" />
-          <Counter count={15} title="Hours" />
-          <Counter count={27} title="Minutes" />
-          <Counter count={25} title="Seconds" />
+          <Counter count={15} title={isBellow ? "Hrs" : "Hours"} />
+          <Counter count={27} title={isBellow ? "Min" : "Minutes"} />
+          <Counter count={25} title={isBellow ? "Sec" : `Seconds`} />
         </div>
 
         <div className={`${styles.btns} mb-50px`}>

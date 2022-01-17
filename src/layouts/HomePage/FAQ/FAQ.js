@@ -1,12 +1,17 @@
 import Accordion from "components/Accordion/Accordion";
+import useMediaQuery from "hooks/useMediaQuery";
 import React from "react";
 import styles from "./FAQ.module.css";
 
 function FAQ() {
+  const isBellow600 = useMediaQuery("(max-width: 500px)");
+
   return (
     <div className={styles.faqWrapper}>
       <div className="container-wrapper">
-        <header className="text-center mb-100px">
+        <header
+          className={`text-center ${isBellow600 ? "mb-60px" : "mb-100px"}`}
+        >
           <h1 className="white fs-40px font-gilroy-light weight-3 lh-1 mb-10px">
             FAQ
           </h1>

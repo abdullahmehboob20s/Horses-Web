@@ -8,7 +8,7 @@ function Footer() {
     <div className={styles.footerWrapper}>
       <div className="container-wrapper py-100px">
         <footer>
-          <img src={logo} alt="" />
+          <img className={styles.footerBrand} src={logo} alt="" />
 
           <div className={styles.socialIcons}>
             <a href="#" className="black opacity-0_5">

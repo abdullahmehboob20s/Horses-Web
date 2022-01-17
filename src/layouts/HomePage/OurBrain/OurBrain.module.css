@@ -7,12 +7,10 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: -1.5rem;
 }
 .teamCards > div {
-  margin-bottom: 3rem;
-}
-.teamCards > :not(:last-child) {
-  margin-right: 4rem;
+  margin: 3rem;
 }
 
 .socialIcons {
@@ -23,6 +21,11 @@
 
 .socialIcons > :not(:last-child) {
   margin-right: 0.5rem;
+}
+
+.teamCard {
+  flex: 1;
+  /* border: 2px solid red; */
 }
 
 .teamCard > img {
@@ -44,4 +47,17 @@
   border: 5px solid var(--yellow);
   border-radius: 20px;
   width: fit-content;
+}
+
+@media (max-width: 1000px) {
+  .teamCards > div {
+    margin: 1rem;
+  }
+
+  .teamCard > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--yellow);
+  }
 }

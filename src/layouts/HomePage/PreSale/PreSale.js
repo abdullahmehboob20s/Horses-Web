@@ -5,13 +5,17 @@ import guestImg from "assets/images/guest-img.png";
 import guestImg2 from "assets/images/guest-img-2.png";
 import guestImg3 from "assets/images/guest-img-3.png";
 import guestImg4 from "assets/images/guest-img-4.png";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function PreSale() {
+  const isBellow = useMediaQuery("(max-width: 1000px)");
+  const isBellow600 = useMediaQuery("(max-width: 600px)");
+
   return (
     <div className="container-wrapper">
       <div className={styles.section}>
         <div className={styles.section_left}>
-          <div className="mb-70px">
+          <div className={isBellow ? "mb-50px" : "mb-70px"}>
             <h1 className="text-gradient text-center fs-70px font-gilroy-black mb-25px lh-1">
               Golden Guests
             </h1>
@@ -22,6 +26,26 @@ function PreSale() {
               the regular collection.
             </p>
           </div>
+          {isBellow ? (
+            <div className="mb-50px">
+              <div className={styles.gallery}>
+                <div className={isBellow600 ? "mb-30px" : "mb-70px"}>
+                  <ImageMirrorEffect
+                    img={guestImg}
+                    style={{ marginRight: 0 }}
+                  />
+                </div>
+
+                <div className={styles.galleryCards}>
+                  <img src={guestImg2} className="w-full" alt="" />
+                  <img src={guestImg3} className="w-full" alt="" />
+                  <img src={guestImg4} className="w-full" alt="" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
 
           <p className="text-center uppercase font-gilroy-light weight-3 fs-40px white mb-20px">
             Time For Presale
@@ -39,19 +63,24 @@ function PreSale() {
             Submit
           </button>
         </div>
-        <div className={styles.section_right}>
-          <div className={styles.gallery}>
-            <div className="mb-70px">
-              <ImageMirrorEffect img={guestImg} style={{ marginRight: 0 }} />
-            </div>
 
-            <div className={styles.galleryCards}>
-              <img src={guestImg2} className="w-full" alt="" />
-              <img src={guestImg3} className="w-full" alt="" />
-              <img src={guestImg4} className="w-full" alt="" />
+        {isBellow ? (
+          ""
+        ) : (
+          <div className={styles.section_right}>
+            <div className={styles.gallery}>
+              <div className="mb-70px">
+                <ImageMirrorEffect img={guestImg} style={{ marginRight: 0 }} />
+              </div>
+
+              <div className={styles.galleryCards}>
+                <img src={guestImg2} className="w-full" alt="" />
+                <img src={guestImg3} className="w-full" alt="" />
+                <img src={guestImg4} className="w-full" alt="" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

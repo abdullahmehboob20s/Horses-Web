@@ -70,6 +70,7 @@
 
 body {
   background-color: black;
+  overflow-x: hidden;
 }
 
 :root {
@@ -616,7 +617,6 @@ li {
 /*  */
 
 .nftCollectionSwiper.swiper-container {
-  padding-bottom: 100px;
 }
 
 .nftCollectionSwiper .swiper-pagination-bullet {
@@ -628,4 +628,34 @@ li {
 
 .nftCollectionSwiper .swiper-pagination-bullet-active {
   background-color: #f3b42d;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --fs-50px: 30px;
+    --fs-46px: 35px;
+    --fs-24px: 18px;
+    --fs-20px: 18px;
+    --fs-30px: 22px;
+    --fs-60px: 40px;
+    --fs-40px: 28px;
+    --fs-64px: 45px;
+    --fs-70px: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --fs-50px: 26px;
+    --fs-30px: 16px;
+    --fs-70px: 30px;
+  }
+
+  .accordion___ .fs-20px {
+    font-size: 1rem;
+  }
+
+  .horse_section .fs-60px {
+    font-size: 30px;
+  }
 }

@@ -73,3 +73,53 @@
   padding: 1rem 4rem;
   border-radius: 7px;
 }
+
+@media (max-width: 760px) {
+  .btns button {
+    padding: 1rem 1rem;
+  }
+
+  .connectWalletBtn {
+    padding: 1rem 1rem;
+  }
+
+  .counter_count {
+    width: 75px;
+    height: 52px;
+  }
+
+  .counterParent > p {
+    margin-top: 0.4rem;
+  }
+
+  .itemsAvailable {
+    padding: 0.8rem;
+  }
+
+  .counterTimer > div {
+    padding: 1rem 2rem;
+  }
+
+  .counter {
+    margin-right: 8px;
+  }
+
+  .counterWrapper > :not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .counter {
+    margin-right: 6px;
+  }
+
+  .counterWrapper > :not(:last-child) {
+    margin-right: 6px;
+  }
+
+  .counter_count {
+    width: 55px;
+    height: 52px;
+  }
+}

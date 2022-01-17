@@ -20,3 +20,13 @@
 .socialIcons > :not(:last-child) {
   margin-right: 2rem;
 }
+
+@media (max-width: 500px) {
+  .footerBrand {
+    width: 90%;
+    max-width: 300px;
+  }
+  .footerWrapper footer > :not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}

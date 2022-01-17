@@ -13,7 +13,7 @@
 }
 
 .section input {
-  width: 545px;
+  width: 100%;
   display: block;
   padding: 1.5rem 2.5rem;
   border: 3px solid var(--orange);
@@ -36,4 +36,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 27px;
+}
+
+@media (max-width: 1200px) {
+  .section_left {
+    flex: 1;
+    margin-right: 3rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section_left {
+    flex: 1;
+    margin-right: 0rem;
+  }
+
+  .galleryCards {
+    gap: 0.8rem;
+  }
 }

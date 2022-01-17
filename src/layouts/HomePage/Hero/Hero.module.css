@@ -18,8 +18,25 @@
   background-position: center center;
   background-size: 100%;
   z-index: -1;
+  background-repeat: no-repeat;
 }
 
 .hero img {
   background-color: transparent;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    min-height: auto;
+    padding-top: 200px;
+  }
+
+  .hero::before {
+    background-position: bottom center;
+  }
+}
+@media (max-width: 500px) {
+  .hero {
+    padding-top: 180px;
+  }
 }

@@ -14,10 +14,12 @@ import Values from "layouts/HomePage/Values/Values";
 import Roadmap from "layouts/HomePage/Roadmap/Roadmap";
 import React from "react";
 import styles from "./HomePage.module.css";
+import Navbar from "layouts/Navbar/Navbar";
 
 function HomePage() {
   return (
     <div>
+      <Navbar />
       <Hero />
       <div className="mb-50px">
         <CountdownTimer />

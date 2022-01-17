@@ -10,6 +10,14 @@ import teamImg5 from "assets/images/team-img-5.png";
 import teamImg6 from "assets/images/team-img-6.png";
 import teamImg7 from "assets/images/team-img-7.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+
+import SwiperCore, { Pagination, Navigation } from "swiper";
+import useMediaQuery from "hooks/useMediaQuery";
+SwiperCore.use([Navigation, Pagination]);
+
 const TeamCard = ({ img, title, desc }) => {
   return (
     <div className={`${styles.teamCard} text-center`}>
@@ -38,11 +46,16 @@ const TeamCard = ({ img, title, desc }) => {
 };
 
 function OurBrain() {
+  const isBellow = useMediaQuery("(max-width: 1200px)");
+  const isBellow600 = useMediaQuery("(max-width: 600px)");
+
   return (
     <div className={styles.ourBrainWrapper}>
       <div className="container-wrapper py-100px">
         <section className="mb-100px">
-          <header className="text-center mb-100px">
+          <header
+            className={`text-center ${isBellow600 ? "mb-60px" : "mb-100px"}`}
+          >
             <h1 className="black fs-40px font-gilroy-light weight-3 lh-1 mb-10px">
               OUR BRAIN
             </h1>
@@ -72,20 +85,72 @@ function OurBrain() {
             </h1>
           </header>
 
-          <main className={styles.advisorsCards}>
-            <div className={styles.advisorCard}>
-              <TeamCard img={teamImg1} title="David Drake" desc="UI Designer" />
-            </div>
-            <div className={styles.advisorCard}>
-              <TeamCard img={teamImg1} title="David Drake" desc="UI Designer" />
-            </div>
-            <div className={styles.advisorCard}>
-              <TeamCard img={teamImg1} title="David Drake" desc="UI Designer" />
-            </div>
-            <div className={styles.advisorCard}>
-              <TeamCard img={teamImg1} title="David Drake" desc="UI Designer" />
-            </div>
-          </main>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={4}
+            pagination={isBellow ? true : false}
+            className={isBellow ? "nftCollectionSwiper" : ""}
+            style={{ paddingBottom: isBellow ? "50px" : "" }}
+            breakpoints={{
+              1200: {
+                spaceBetween: 50,
+                slidesPerView: 4,
+              },
+              1000: {
+                spaceBetween: 20,
+                slidesPerView: 3,
+              },
+              700: {
+                spaceBetween: 20,
+                slidesPerView: 3,
+              },
+              450: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+              },
+              200: {
+                spaceBetween: 20,
+                slidesPerView: 1,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <div className={styles.advisorCard}>
+                <TeamCard
+                  img={teamImg1}
+                  title="David Drake"
+                  desc="UI Designer"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.advisorCard}>
+                <TeamCard
+                  img={teamImg1}
+                  title="David Drake"
+                  desc="UI Designer"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.advisorCard}>
+                <TeamCard
+                  img={teamImg1}
+                  title="David Drake"
+                  desc="UI Designer"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.advisorCard}>
+                <TeamCard
+                  img={teamImg1}
+                  title="David Drake"
+                  desc="UI Designer"
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </section>
       </div>
     </div>

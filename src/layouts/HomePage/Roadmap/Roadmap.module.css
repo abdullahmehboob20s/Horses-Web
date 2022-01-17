@@ -4,6 +4,7 @@
 }
 
 .roadmap img {
+  width: 35%;
   /* max-width: 342px; */
   margin: 0 auto;
   display: block;
@@ -11,54 +12,68 @@
 
 .roadmap > div {
   display: none;
+  position: absolute;
 }
 
 .roadmap > :nth-child(1) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  top: 0;
-  right: 130px;
+  top: -2%;
+  left: 63%;
 }
 .roadmap > :nth-child(2) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  top: 0;
-  left: 130px;
+  top: -2%;
+  right: 63%;
 }
 .roadmap > :nth-child(3) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  top: 320px;
-  left: 180px;
+  top: 33%;
+  right: 60%;
 }
 .roadmap > :nth-child(4) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  top: 290px;
-  right: 190px;
+  top: 32%;
+  left: 60%;
 }
 .roadmap > :nth-child(5) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  bottom: 140px;
-  right: 120px;
+  top: 62%;
+  left: 65%;
 }
 .roadmap > :nth-child(6) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  top: 88%;
-  right: 25%;
+  top: 87%;
+  right: 30%;
 }
 .roadmap > :nth-child(7) {
   display: block;
   max-width: 332.07px;
-  position: absolute;
-  bottom: 10%;
-  left: 6%;
+  top: 70%;
+  right: 65%;
+}
+
+@media (max-width: 1000px) {
+  .roadmap img {
+    display: none;
+  }
+
+  .roadmap > div {
+    display: none;
+    position: static;
+    max-width: 100% !important;
+  }
+
+  .roadmap > :not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .roadmap {
+    margin-bottom: 0px;
+  }
 }

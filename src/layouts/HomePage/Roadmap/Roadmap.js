@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Roadmap.module.css";
 import dollar from "assets/images/dollar.png";
+import useMediaQuery from "hooks/useMediaQuery";
 
 const Card = ({ title, desc }) => {
   return (
@@ -14,9 +15,11 @@ const Card = ({ title, desc }) => {
 };
 
 function Roadmap() {
+  const isBellow600 = useMediaQuery("(max-width: 600px)");
+
   return (
     <div className="container-wrapper">
-      <header className="text-center mb-70px">
+      <header className={`text-center ${isBellow600 ? "mb-60px" : "mb-70px"}`}>
         <h1 className="fs-40px font-gilroy-light weight-3 mb-5px lh-1 white">
           Roadmap
         </h1>

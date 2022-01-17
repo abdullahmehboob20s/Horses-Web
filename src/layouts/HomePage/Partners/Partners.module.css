@@ -3,8 +3,19 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: -1rem;
 }
 
-.partners > :not(:last-child) {
-  margin-right: 2rem;
+.partners > img {
+  margin: 2rem;
+}
+
+@media (max-width: 500px) {
+  .partners {
+    margin: -0.5rem;
+  }
+
+  .partners > img {
+    margin: 1rem;
+  }
 }

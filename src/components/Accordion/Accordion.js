@@ -18,7 +18,9 @@ function Accordion({ question, answer }) {
   };
 
   return (
-    <div className={`${styles.accordion} ${open ? styles.open : ""}`}>
+    <div
+      className={`${styles.accordion} accordion___ ${open ? styles.open : ""}`}
+    >
       <div className={styles.accordionBtn} onClick={toggler}>
         <p className="fs-20px white font-gilroy-bold uppercase">{question}</p>{" "}
         <span className="flex">

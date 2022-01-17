@@ -9,5 +9,11 @@
 }
 .section_right {
   flex: 1;
-  /* border: 2px solid red; */
+}
+
+@media (max-width: 1200px) {
+  .section_left {
+    flex: 1;
+    margin-right: 3rem;
+  }
 }

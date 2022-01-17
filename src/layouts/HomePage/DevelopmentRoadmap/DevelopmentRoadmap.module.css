@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .cardTitle {
   padding: 1rem 1rem;
@@ -30,4 +31,40 @@
   border-radius: 3px;
   width: fit-content;
   background-color: black;
+}
+
+@media (max-width: 1000px) {
+  .road {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    padding-right: 0rem;
+  }
+
+  .roadmapCard {
+    padding-bottom: 4rem;
+  }
+
+  .roadmapCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+    background-color: #f7d48133;
+    z-index: -10;
+  }
+
+  .roadmapCard:last-child::before {
+    display: none;
+  }
+
+  .roadmapCard:last-child {
+    padding-bottom: 0;
+  }
 }
