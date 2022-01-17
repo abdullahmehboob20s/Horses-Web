@@ -73,7 +73,12 @@
   transition: all 0.2s ease;
 }
 
-.navbarScrollLink.active img {
+.navbarScrollActive {
+  color: white;
+  font-weight: 800;
+}
+
+.navbarScrollActive img {
   opacity: 1;
 }
 
@@ -198,12 +203,17 @@
   }
 
   .mobileBar img {
-    width: 177px;
+    width: 160px;
   }
 
   .crossIcon {
     width: 22px !important;
     cursor: pointer;
+  }
+
+  .navbarScrollActive {
+    color: black;
+    font-weight: 800;
   }
 }
 

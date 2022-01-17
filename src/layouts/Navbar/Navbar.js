@@ -56,48 +56,86 @@ function Navbar() {
             </div>
             <div className={styles.navbar_link}>
               <ScrollLink
-                className={`${styles.navbarScrollLink} ${styles.active} gray uppercase font-gilroy-light weight-3 pointer`}
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="home"
+                className={`${styles.navbarScrollLink}  gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 Home
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="why"
+                offset={-150}
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 Why
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="nfts"
+                offset={-50}
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 our nft’s
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="roadmap"
+                offset={-150}
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 roadmap
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="whitepaper"
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 whitepaper
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="team"
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
+                offset={-100}
               >
                 team
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                to="partners"
+                offset={-150}
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 partner’s
                 <img src={activeIndicator} alt="" />
               </ScrollLink>
               <ScrollLink
+                activeClass={`${styles.navbarScrollActive}`}
+                onClick={() => setIsOpen(false)}
+                spy={true}
+                offset={-150}
+                to="faq"
                 className={`${styles.navbarScrollLink} gray uppercase font-gilroy-light weight-3 pointer`}
               >
                 FAQ

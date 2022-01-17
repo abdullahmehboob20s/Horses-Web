@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./CountdownTimer.module.css";
 import { FaPlus } from "react-icons/fa";
 import { TiMinus } from "react-icons/ti";
@@ -23,6 +23,45 @@ const Counter = ({ count, title }) => {
 function CountdownTimer() {
   const isBellow = useMediaQuery("(max-width: 500px)");
 
+  const [counter, setCounter] = useState(1);
+  const [deadline, setDeadline] = useState("Feb 10, 2022 00:00:00");
+
+  const [timerDays, setTimerDays] = useState("00");
+  const [timerHours, setTimerHours] = useState("00");
+  const [timerMinutes, setTimerMinutes] = useState("00");
+  const [timerSeconds, setTimerSeconds] = useState("00");
+  let interval = useRef();
+
+  const startTimer = () => {
+    const countdownDate = new Date(deadline).getTime();
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if (distance < 0) {
+        // stop our timer
+        clearInterval(interval.current);
+      } else {
+        // update timer
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      }
+    });
+  };
+  useEffect(() => {
+    startTimer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  });
+
   return (
     <div className="container-wrapper py-100px">
       <div className={styles.wrapper}>
@@ -37,17 +76,17 @@ function CountdownTimer() {
         </p>
 
         <div className={`${styles.counterWrapper} mb-50px`}>
-          <Counter count={9} title="Days" />
-          <Counter count={15} title={isBellow ? "Hrs" : "Hours"} />
-          <Counter count={27} title={isBellow ? "Min" : "Minutes"} />
-          <Counter count={25} title={isBellow ? "Sec" : `Seconds`} />
+          <Counter count={timerDays} title="Days" />
+          <Counter count={timerHours} title={isBellow ? "Hrs" : "Hours"} />
+          <Counter count={timerMinutes} title={isBellow ? "Min" : "Minutes"} />
+          <Counter count={timerSeconds} title={isBellow ? "Sec" : `Seconds`} />
         </div>
 
         <div className={`${styles.btns} mb-50px`}>
           <div
             className={`${styles.itemsAvailable} fs-30px font-gilroy-bold text-center white mb-15px `}
           >
-            0/10000
+            {counter}/10000
           </div>
 
           <button className="fs-20px font-gilroy-bold white text-center bg-orange block pointer w-full uppercase mb-15px">
@@ -59,11 +98,19 @@ function CountdownTimer() {
         </div>
 
         <div className={styles.counterTimer}>
-          <button className="white pointer">
+          <button
+            className="white pointer"
+            onClick={() => setCounter(counter <= 1 ? counter : counter - 1)}
+          >
             <TiMinus size={30} />
           </button>
-          <div className="fs-30px font-gilroy-bold text-center white">1</div>
-          <button className="white pointer">
+          <div className="fs-30px font-gilroy-bold text-center white">
+            {counter}
+          </div>
+          <button
+            className="white pointer"
+            onClick={() => setCounter(counter + 1)}
+          >
             <FaPlus size={30} />
           </button>
         </div>

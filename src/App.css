@@ -71,9 +71,13 @@
 body {
   background-color: black;
   overflow-x: hidden;
+
+  scroll-behavior: smooth;
 }
 
 :root {
+  scroll-behavior: smooth;
+
   --fs-12px: 12px;
   --fs-14px: 14px;
   --fs-16px: 16px;

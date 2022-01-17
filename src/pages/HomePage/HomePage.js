@@ -20,11 +20,13 @@ function HomePage() {
   return (
     <div>
       <Navbar />
-      <Hero />
+      <div id="home">
+        <Hero />
+      </div>
       <div className="mb-50px">
         <CountdownTimer />
       </div>
-      <div className="mb-100px">
+      <div className="mb-100px" id="why">
         <Section />
       </div>
       <div className="mb-150px">
@@ -36,10 +38,10 @@ function HomePage() {
       <div className="mb-150px">
         <PreSale />
       </div>
-      <div className="mb-150px">
+      <div className="mb-150px" id="nfts">
         <NFTS />
       </div>
-      <div className="mb-150px">
+      <div className="mb-150px" id="roadmap">
         <Roadmap />
       </div>
       <div className="mb-150px">
@@ -48,13 +50,13 @@ function HomePage() {
       <div className="mb-100px">
         <Values />
       </div>
-      <div className="mb-100px">
+      <div className="mb-100px" id="team">
         <OurBrain />
       </div>
-      <div className="mb-150px">
+      <div className="mb-150px" id="partners">
         <Partners />
       </div>
-      <div className="mb-150px">
+      <div className="mb-150px" id="faq">
         <FAQ />
       </div>
       <Footer />
