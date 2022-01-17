@@ -1,0 +1,13 @@
+.section {
+  display: flex;
+  align-items: center;
+}
+
+.section_left {
+  flex: 0.8;
+  margin-right: 5rem;
+}
+.section_right {
+  flex: 1;
+  /* border: 2px solid red; */
+}

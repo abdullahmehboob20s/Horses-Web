@@ -1,0 +1,64 @@
+.roadmap {
+  position: relative;
+  margin-bottom: 400px;
+}
+
+.roadmap img {
+  /* max-width: 342px; */
+  margin: 0 auto;
+  display: block;
+}
+
+.roadmap > div {
+  display: none;
+}
+
+.roadmap > :nth-child(1) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  top: 0;
+  right: 130px;
+}
+.roadmap > :nth-child(2) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  top: 0;
+  left: 130px;
+}
+.roadmap > :nth-child(3) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  top: 320px;
+  left: 180px;
+}
+.roadmap > :nth-child(4) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  top: 290px;
+  right: 190px;
+}
+.roadmap > :nth-child(5) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  bottom: 140px;
+  right: 120px;
+}
+.roadmap > :nth-child(6) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  top: 88%;
+  right: 25%;
+}
+.roadmap > :nth-child(7) {
+  display: block;
+  max-width: 332.07px;
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+}

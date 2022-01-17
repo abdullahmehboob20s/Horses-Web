@@ -1,0 +1,20 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem 3rem;
+}
+
+.cardIcon {
+  width: 121.95px;
+  height: 121.95px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerBtn {
+  padding: 1.2rem 3rem;
+  border-radius: 10px;
+  background-color: var(--orange);
+}
