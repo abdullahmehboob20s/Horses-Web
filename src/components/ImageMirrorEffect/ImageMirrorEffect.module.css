@@ -4,6 +4,8 @@
   z-index: 3;
   margin-right: 55px;
   margin-bottom: 55px;
+  align-items: flex-start;
+  /* border: 2px solid red; */
 }
 
 .wrapper img:nth-child(2) {
