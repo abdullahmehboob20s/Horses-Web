@@ -6,8 +6,8 @@ import useMediaQuery from "hooks/useMediaQuery";
 const Card = ({ title, desc }) => {
   return (
     <div className="white text-center">
-      <h1 className="fs-60px white font-gilroy-black mb-20px lh-1">{title}</h1>
-      <h2 className="fs-18px font-gilroy-light weight-3 white opacity-0_7 lh-1_6 ">
+      <h1 className="fs-44px white font-gilroy-black mb-10px lh-1">{title}</h1>
+      <h2 className="fs-14px font-gilroy-light weight-3 white opacity-0_7 lh-1_4 ">
         {desc}
       </h2>
     </div>
