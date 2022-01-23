@@ -36,10 +36,10 @@ function DevelopmentRoadmap() {
       let a = window.scrollY - roadmap.current.offsetTop;
       let value = a + window.innerHeight / 2;
 
-      if (value >= roadmapLineWrapper.current.clientHeight) {
-        setValue(roadmapLineWrapper.current.clientHeight);
-        return;
-      }
+      // if (value >= roadmapLineWrapper.current.clientHeight) {
+      //   setValue(roadmapLineWrapper.current.clientHeight);
+      //   return;
+      // }
       setValue(value);
     };
 

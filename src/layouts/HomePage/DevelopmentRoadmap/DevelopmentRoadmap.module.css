@@ -243,16 +243,15 @@
     background-color: #fde18f;
     left: 7px;
     box-shadow: inset 10px 0 0 #ce842f;
-    /* overflow-y: hidden;
-    overflow-x: visible; */
+    overflow-y: hidden;
   }
 
   .road_line {
     width: 100%;
     height: 200px;
     /* background-color: #ce842f; */
-    background-color: #fde18f;
-    box-shadow: inset 10px 0 0 #ce842f, 0px 0 20px 1px #ce842f;
+    background-color: transparent;
+    box-shadow: inset 0px 0 15px 2px white;
 
     /* box-shadow: ; */
   }
