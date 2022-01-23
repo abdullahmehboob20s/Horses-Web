@@ -1,5 +1,5 @@
 import ImageMirrorEffect from "components/ImageMirrorEffect/ImageMirrorEffect";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PreSale.module.css";
 import guestImg from "assets/images/guest-img.png";
 import guestImg2 from "assets/images/guest-img-2.png";
@@ -10,6 +10,7 @@ import useMediaQuery from "hooks/useMediaQuery";
 function PreSale() {
   const isBellow = useMediaQuery("(max-width: 1000px)");
   const isBellow600 = useMediaQuery("(max-width: 600px)");
+  const [image, setImage] = useState(guestImg);
 
   return (
     <div className="container-wrapper">
@@ -30,16 +31,28 @@ function PreSale() {
             <div className="mb-50px">
               <div className={styles.gallery}>
                 <div className={isBellow600 ? "mb-30px" : "mb-70px"}>
-                  <ImageMirrorEffect
-                    img={guestImg}
-                    style={{ marginRight: 0 }}
-                  />
+                  <ImageMirrorEffect img={image} style={{ marginRight: 0 }} />
                 </div>
 
                 <div className={styles.galleryCards}>
-                  <img src={guestImg2} className="w-full" alt="" />
-                  <img src={guestImg3} className="w-full" alt="" />
-                  <img src={guestImg4} className="w-full" alt="" />
+                  <img
+                    src={guestImg2}
+                    onClick={() => setImage(guestImg2)}
+                    className="w-full pointer"
+                    alt=""
+                  />
+                  <img
+                    src={guestImg3}
+                    onClick={() => setImage(guestImg3)}
+                    className="w-full pointer"
+                    alt=""
+                  />
+                  <img
+                    src={guestImg4}
+                    onClick={() => setImage(guestImg4)}
+                    className="w-full pointer"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -70,13 +83,28 @@ function PreSale() {
           <div className={styles.section_right}>
             <div className={styles.gallery}>
               <div className="mb-70px">
-                <ImageMirrorEffect img={guestImg} style={{ marginRight: 0 }} />
+                <ImageMirrorEffect img={image} style={{ marginRight: 0 }} />
               </div>
 
               <div className={styles.galleryCards}>
-                <img src={guestImg2} className="w-full" alt="" />
-                <img src={guestImg3} className="w-full" alt="" />
-                <img src={guestImg4} className="w-full" alt="" />
+                <img
+                  src={guestImg2}
+                  onClick={() => setImage(guestImg2)}
+                  className="w-full pointer"
+                  alt=""
+                />
+                <img
+                  src={guestImg3}
+                  onClick={() => setImage(guestImg3)}
+                  className="w-full pointer"
+                  alt=""
+                />
+                <img
+                  src={guestImg4}
+                  onClick={() => setImage(guestImg4)}
+                  className="w-full pointer"
+                  alt=""
+                />
               </div>
             </div>
           </div>

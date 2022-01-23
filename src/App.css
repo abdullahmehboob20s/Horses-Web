@@ -630,8 +630,12 @@ li {
   z-index: 1000;
 }
 
+.nftCollectionSwiper.ghore .swiper-pagination-bullet {
+  background-color: rgba(180, 180, 180, 0.788);
+}
+
 .nftCollectionSwiper .swiper-pagination-bullet-active {
-  background-color: #f3b42d;
+  background-color: #f3b42d !important;
 }
 
 @media (max-width: 760px) {

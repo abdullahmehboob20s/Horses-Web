@@ -89,7 +89,7 @@ function OurBrain() {
             spaceBetween={50}
             slidesPerView={4}
             pagination={isBellow ? true : false}
-            className={isBellow ? "nftCollectionSwiper" : ""}
+            className={isBellow ? "nftCollectionSwiper ghore" : ""}
             style={{ paddingBottom: isBellow ? "50px" : "" }}
             breakpoints={{
               1200: {
