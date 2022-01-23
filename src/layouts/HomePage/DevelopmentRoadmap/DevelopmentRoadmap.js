@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./DevelopmentRoadmap.module.css";
 import roadmapRoad from "assets/images/roadmap-road.png";
 import roadmapRoad2 from "assets/images/roadmap-road-2.png";
@@ -26,6 +26,30 @@ const RoadmapCard = ({ title, desc }) => {
 };
 
 function DevelopmentRoadmap() {
+  const roadmap = useRef();
+  const roadmapLine = useRef();
+  const roadmapLineWrapper = useRef();
+  const [value, setValue] = useState(null);
+
+  useEffect(() => {
+    const handler = () => {
+      let a = window.scrollY - roadmap.current.offsetTop;
+      let value = a + window.innerHeight / 2;
+
+      if (value >= roadmapLineWrapper.current.clientHeight) {
+        setValue(roadmapLineWrapper.current.clientHeight);
+        return;
+      }
+      setValue(value);
+    };
+
+    window.addEventListener("scroll", handler);
+
+    return () => {
+      window.removeEventListener("scroll", handler);
+    };
+  });
+
   return (
     <div className="container-wrapper">
       <header className="text-center mb-70px">
@@ -65,33 +89,39 @@ function DevelopmentRoadmap() {
         />
       </main> */}
 
-      <main className={styles.cards_2}>
-        {/* <img src={} className={styles.road_2} alt="" /> */}
+      <main className={styles.cards_2} ref={roadmap}>
+        <RoadmapCard
+          title="June 2017"
+          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
+        />
+        <RoadmapCard
+          title="June 2017"
+          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
+        />
+        <RoadmapCard
+          title="June 2017"
+          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
+        />
+        <RoadmapCard
+          title="June 2017"
+          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
+        />
+        <RoadmapCard
+          title="June 2017"
+          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
+        />
+        <RoadmapCard
+          title="June 2017"
+          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
+        />
 
-        <RoadmapCard
-          title="June 2017"
-          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
-        />
-        <RoadmapCard
-          title="June 2017"
-          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
-        />
-        <RoadmapCard
-          title="June 2017"
-          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
-        />
-        <RoadmapCard
-          title="June 2017"
-          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
-        />
-        <RoadmapCard
-          title="June 2017"
-          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
-        />
-        <RoadmapCard
-          title="June 2017"
-          desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
-        />
+        <div className={styles.road_2} ref={roadmapLineWrapper}>
+          <div
+            className={styles.road_line}
+            style={{ height: value + "px" }}
+            ref={roadmapLine}
+          ></div>
+        </div>
       </main>
     </div>
   );

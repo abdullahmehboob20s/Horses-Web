@@ -26,7 +26,7 @@ function HomePage() {
       <div className="mb-50px">
         <CountdownTimer />
       </div>
-      <div className="mb-100px" id="why">
+      {/* <div className="mb-100px" id="why">
         <Section />
       </div>
       <div className="mb-150px">
@@ -40,7 +40,7 @@ function HomePage() {
       </div>
       <div className="mb-150px" id="nfts">
         <NFTS />
-      </div>
+      </div> */}
       <div className="mb-150px" id="roadmap">
         <Roadmap />
       </div>
