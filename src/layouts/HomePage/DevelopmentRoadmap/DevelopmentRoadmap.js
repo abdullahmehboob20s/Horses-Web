@@ -26,20 +26,14 @@ const RoadmapCard = ({ title, desc }) => {
 };
 
 function DevelopmentRoadmap() {
-  const roadmap = useRef();
-  const roadmapLine = useRef();
-  const roadmapLineWrapper = useRef();
-  const [value, setValue] = useState(null);
+  const roadmap = useRef(null);
+  const roadmapLine = useRef(null);
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
     const handler = () => {
       let a = window.scrollY - roadmap.current.offsetTop;
       let value = a + window.innerHeight / 2;
-
-      // if (value >= roadmapLineWrapper.current.clientHeight) {
-      //   setValue(roadmapLineWrapper.current.clientHeight);
-      //   return;
-      // }
       setValue(value);
     };
 
@@ -115,7 +109,7 @@ function DevelopmentRoadmap() {
           desc="Pacific argentine. Lined sole masu salmon wolffish cutthroat trout mustard eel huchen, sea toad grenadier madtom yellow moray Shingle Fish wrymouth giant"
         />
 
-        <div className={styles.road_2} ref={roadmapLineWrapper}>
+        <div className={styles.road_2}>
           <div
             className={styles.road_line}
             style={{ height: value + "px" }}
